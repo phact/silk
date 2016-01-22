@@ -701,11 +701,29 @@ define(function (require) {
               });
 
               // Buckets
-              var timeField = resp.data.responseHeader.params['facet.range'];
-              var facetField = resp.data.responseHeader.params['facet.field'];
+              console.info("I'm HERE!!")
+              //Fix for the visualize tab in DSE
+              //var timeField = resp.data.responseHeader.params['facet.range'];
+              //var facetField = resp.data.responseHeader.params['facet.field'];
+              if (resp.data.responseHeader.params == undefined && (resp.data.facet_range != undefined || resp.data.facet_counts != undefined)) {
+                var timeField = "date";
+                for (field in resp.data.facet_range){
+                    timeField = field
+                }
+                var facetField = "";
+                for (field in resp.data.facet_counts.facet_fields){
+                    facetField = field
+                }
+                var statsField = "";
+              }
+              else if ( resp.data.responseHeader.params != undefined){
+                var timeField = resp.data.responseHeader.params['facet.range'];
+                var facetField = resp.data.responseHeader.params['facet.field'];
+                var statsField = resp.data.responseHeader.params['stats.field'];
+              }
+              
               // Stats
               var aggregations = {};
-              var statsField = resp.data.responseHeader.params['stats.field'];
 
               /**************** Buckets aggregations ****************/
               // For time-series data, compute the aggregate for facets to plot histogram

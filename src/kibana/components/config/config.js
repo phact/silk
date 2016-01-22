@@ -4,7 +4,7 @@ define(function (require) {
   ]);
 
   var configFile = JSON.parse(require('text!config'));
-  configFile.collectionsApi = '/admin/collections';
+  configFile.collectionsApi = '/admin/cores';
   // Define Solr URL in config
   configFile.solr = (function() {
     //   Cannot specify query-pipelines here because we use configFile.solr to check for Solr

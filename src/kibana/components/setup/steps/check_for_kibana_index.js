@@ -12,7 +12,8 @@ define(function (require) {
       //   throw new SetupError('Unable to check for Kibana index "<%= configFile.kibana_index %>"', err);
       // })
 
-      return $http.get(configFile.solr + configFile.collectionsApi + '?action=LIST&wt=json')
+      //return $http.get(configFile.solr + configFile.collectionsApi + '?action=LIST&wt=json')
+      return $http.get(configFile.solr + configFile.collectionsApi + '?wt=json')
       .then(complete, complete.failure);
     };
   };

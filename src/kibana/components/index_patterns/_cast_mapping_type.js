@@ -21,6 +21,12 @@ define(function (require) {
         { name: 'geo_shape',    type: 'geo_shape',  group: 'geo'    },
         { name: 'ip',           type: 'ip',         group: 'other'  },
         { name: 'attachment',   type: 'attachment', group: 'other'  },
+        // DSE Search field types that will be cast to ES types
+        { name: 'TrieDateField',type: 'date',       group: 'base' },
+        { name: 'TrieLongField',type: 'number',     group: 'number' },
+        { name: 'TrieDoubleField',type: 'number',   group: 'number' },
+        { name: 'TrieIntField', type: 'number',     group: 'number' },
+        { name: 'TrieFloatField',type: 'number',     group: 'number' },
         // Solr field types that will be cast to ES types
         { name: 'int',          type: 'number',     group: 'number' },
         { name: 'tint',         type: 'number',     group: 'number' },

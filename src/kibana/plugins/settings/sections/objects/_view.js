@@ -183,10 +183,13 @@ define(function (require) {
           // })
           // .catch(notify.fatal);
           var solrUrl = config.file.solr + '/' + config.file.kibana_index + '/update?commit=true';
+          console.info( angular.toJson(source).replace("set", "add"))
           var data = [{
             "_id": $routeParams.id,
             "_index": config.file.kibana_index,
             "_type": service.type,
+            //turning off batch updates for DSE
+            //"_source": angular.toJson(source).replace("set", "add"),
             "_source": angular.toJson(source),
             "found": true
           }];

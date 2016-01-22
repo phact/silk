@@ -47,7 +47,9 @@ define(function (require) {
         "_id": this._state.id,
         "_index": this._state.index,
         "_type": this._state.type,
-        "_source": {"set":angular.toJson(fields)}
+        //taking out the atomic set for DSE
+        //"_source": {"set":angular.toJson(fields)}
+        "_source": angular.toJson(fields)
       }];
 
       return $http.post(solrUrl, data)
