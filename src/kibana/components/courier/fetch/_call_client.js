@@ -707,6 +707,9 @@ define(function (require) {
               //var facetField = resp.data.responseHeader.params['facet.field'];
               if (resp.data.responseHeader.params == undefined && (resp.data.facet_range != undefined || resp.data.facet_counts != undefined)) {
                 var timeField = "date";
+                for (field in resp.data.facet_counts.facet_ranges) (
+                    timeField = field
+                )
                 for (field in resp.data.facet_range){
                     timeField = field
                 }
@@ -789,7 +792,8 @@ define(function (require) {
                   });
 
                 } else {
-                  _.each(resp.data.facets, function (bucketArray, subMetricId) {
+                  //_.each(resp.data.facets, function (bucketArray, subMetricId) {
+                  _.each(resp.data.facet_counts, function (bucketArray, subMetricId) {
                     if (subMetricId > 0) {
                       aggregations[metricId] = { 'buckets': bucketArray.buckets };
                       _.each(aggregations[metricId].buckets, function(bucketItem, i) {
