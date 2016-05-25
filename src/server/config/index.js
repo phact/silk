@@ -34,7 +34,7 @@ try {
 }
 
 var config = module.exports = {
-  port                    : kibana.port || 5601,
+  port                    : kibana.port || 4040,
   host                    : kibana.host || '0.0.0.0',
   elasticsearch           : kibana.elasticsearch_url || 'http://localhost:9200',
   solr                    : kibana.solr_url || 'http://localhost:8983',
