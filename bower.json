@@ -37,7 +37,7 @@
     "d3": "~3.4.8",
     "elasticsearch": "~3.1.1",
     "Faker": "~1.1.0",
-    "FileSaver": "*",
+    "FileSaver": "1.3.3",
     "font-awesome": "~4.2.0",
     "gridster": "~0.5.0",
     "inflection": "~1.3.5",
