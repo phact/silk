@@ -29,8 +29,7 @@ define(function (require) {
       ' http://en.wikipedia.org/wiki/ISO_8601#Time_intervals'
     },
     'defaultIndex': {
-      value: null,
-      // value: 'logs',
+      value: 'silkconfig.silkconfig',
       description: 'The index to access if no index is set',
     },
     'metaFields': {

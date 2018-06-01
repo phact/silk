@@ -20,7 +20,7 @@ define(function (require) {
 
     // this and child scopes will write pattern vars here
     var index = $scope.index = {
-      name: 'logs',
+      name: 'silkconfig.silkconfig',
 
       isTimeBased: true,
       nameIsPattern: false,
